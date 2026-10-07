@@ -239,6 +239,8 @@ section {
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: transparent;
+  cursor: pointer;
 }
 .main-btn .btn-text {
   padding: 0 2rem;

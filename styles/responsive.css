@@ -1,9 +1,3 @@
-/* ==========================================================
-   responsive.css  — link this AFTER style.css
-   <link rel="stylesheet" href="styles/style.css">
-   <link rel="stylesheet" href="styles/responsive.css">
-   ========================================================== */
-
 /* ---------- Global safety nets ---------- */
 html {
   -webkit-text-size-adjust: 100%;
