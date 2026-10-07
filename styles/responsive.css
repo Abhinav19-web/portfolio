@@ -1,0 +1,439 @@
+/* ==========================================================
+   responsive.css  — link this AFTER style.css
+   <link rel="stylesheet" href="styles/style.css">
+   <link rel="stylesheet" href="styles/responsive.css">
+   ========================================================== */
+
+/* ---------- Global safety nets ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  overflow-x: hidden;
+}
+
+/* keep the floating buttons above everything */
+.theme-btn {
+  z-index: 11;
+}
+
+/* ---------- Large laptops / small desktops (≤ 1400px) ---------- */
+@media (max-width: 1400px) {
+  section {
+    padding: 3rem 8rem;
+  }
+
+  .header-content .right-header {
+    padding-right: 8rem;
+  }
+
+  .about-container .left-about {
+    padding-right: 3rem;
+  }
+
+  .main-title h2 {
+    font-size: 2.4rem;
+  }
+
+  .main-title h2 .bg-text {
+    font-size: 4rem;
+  }
+}
+
+/* ---------- Laptops / landscape tablets (≤ 1100px) ---------- */
+@media (max-width: 1100px) {
+  body {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 3rem 6.5rem 3rem 3rem; /* extra room on the right for the side controls */
+  }
+
+  .header-content .right-header {
+    padding-right: 5rem;
+  }
+
+  .header-content .right-header .name {
+    font-size: 2.3rem;
+  }
+
+  .header-content .left-header .image {
+    margin-left: 2rem;
+    width: 75%;
+  }
+
+  .about-container .right-about {
+    grid-gap: 1rem;
+  }
+
+  .about-container .right-about .about-item .large-text {
+    font-size: 2.2rem;
+  }
+
+  .about-container .right-about .about-item .small-text {
+    font-size: 0.95rem;
+    padding-left: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  .about-container .left-about h4 {
+    font-size: 1.6rem;
+    white-space: normal;
+  }
+
+  .portfolios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-content-cont .left-contact h4 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------- Tablets & phones (≤ 820px) ---------- */
+@media (max-width: 820px) {
+  /* sections: leave room for the bottom nav bar */
+  section {
+    padding: 4.5rem 1.5rem 7rem;
+  }
+
+  /* ----- Navigation becomes a bottom bar ----- */
+  .controls {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0.4rem 0.5rem;
+    background-color: var(--color-primary);
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  .controls .control {
+    margin: 0.3rem 0;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+  }
+
+  .controls .control i {
+    font-size: 1.1rem;
+  }
+
+  .theme-btn {
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  .theme-btn i {
+    font-size: 1.1rem;
+  }
+
+  /* ----- Home / header ----- */
+  header {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-bottom: 6rem;
+  }
+
+  .header-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .header-content .left-header {
+    justify-content: center;
+    padding: 4.5rem 0 1rem;
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .header-content .left-header .h-shape {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+  }
+
+  .header-content .left-header .image {
+    margin-left: 0;
+    width: min(260px, 60%);
+    height: 100%;
+  }
+
+  .header-content .right-header {
+    padding: 1.5rem 1.5rem 2rem;
+    align-items: flex-start;
+  }
+
+  .header-content .right-header .name {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .header-content .right-header p {
+    margin: 1rem 0;
+    line-height: 1.7rem;
+  }
+
+  /* ----- About ----- */
+  .main-title h2 {
+    font-size: 2rem;
+  }
+
+  .main-title h2 .bg-text {
+    font-size: 3rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-container .left-about {
+    padding-right: 0;
+  }
+
+  .about-stats {
+    padding-bottom: 2rem;
+  }
+
+  .stat-title {
+    padding: 2.5rem 0;
+  }
+
+  /* ----- Portfolio ----- */
+  .portfolios {
+    grid-gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .portfolios .portfolio-item .image {
+    height: 240px;
+  }
+
+  /* ----- Contact ----- */
+  .contact-content-cont {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  .contact-content-cont .right-contact {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .contact-content-cont .left-contact h4 {
+    font-size: 1.5rem;
+  }
+
+  .contact-content-cont .left-contact .contact-info .contact-item {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .contact-content-cont
+    .left-contact
+    .contact-info
+    .contact-item
+    .contact-icon {
+    min-width: 140px;
+  }
+
+  .contact-content-cont .left-contact .social-icons .social-icon {
+    margin-top: 1.5rem;
+  }
+
+  .contact-content-cont .left-contact .social-icons .social-icon a:first-child {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Phones (≤ 600px) ---------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 4.5rem 1.1rem 7rem;
+  }
+
+  .main-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .main-title h2 .bg-text {
+    font-size: 2.4rem;
+  }
+
+  .header-content .right-header {
+    padding: 1.5rem 1.1rem 2rem;
+  }
+
+  .header-content .right-header .name {
+    font-size: 1.7rem;
+  }
+
+  .main-btn .btn-text {
+    padding: 0 1.4rem;
+  }
+
+  .main-btn .btn-icon {
+    padding: 0.85rem;
+  }
+
+  /* about cards: 2 x 2 stays, but tighter */
+  .about-container .right-about {
+    grid-gap: 0.8rem;
+  }
+
+  .about-container .right-about .about-item .abt-text {
+    padding: 1rem;
+  }
+
+  .about-container .right-about .about-item .large-text {
+    font-size: 1.8rem;
+  }
+
+  .about-container .right-about .about-item .small-text {
+    font-size: 0.75rem;
+    padding-left: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .about-container .right-about .about-item .small-text::before {
+    width: 1rem;
+    top: 10px;
+  }
+
+  .about-container .left-about h4 {
+    font-size: 1.3rem;
+  }
+
+  .about-container .left-about p {
+    line-height: 1.6rem;
+    padding: 0.5rem 0;
+  }
+
+  /* skills: one per row */
+  .about-stats .progress-bars {
+    grid-template-columns: 1fr;
+  }
+
+  /* projects: one per row */
+  .portfolios {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolios .portfolio-item .image {
+    height: 220px;
+  }
+
+  /* contact form: stack name / email */
+  .contact-content-cont .right-contact .inp-con {
+    flex-direction: column;
+  }
+
+  .contact-content-cont .right-contact .inp-con :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+
+  .contact-content-cont .right-contact .input-control {
+    margin: 1.1rem 0;
+  }
+
+  .contact-content-cont .right-contact textarea {
+    border-radius: 20px;
+  }
+
+  .contact-content-cont .left-contact .contact-info .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-content-cont .left-contact .contact-info .contact-item p {
+    padding-left: 40px !important;
+    word-break: break-word;
+  }
+
+  .contact-content-cont .left-contact .social-icons .social-icon a {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ---------- Very small phones (≤ 380px) ---------- */
+@media (max-width: 380px) {
+  .controls .control {
+    height: 42px;
+    width: 42px;
+  }
+
+  .header-content .right-header .name {
+    font-size: 1.45rem;
+  }
+
+  .main-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .main-title h2 .bg-text {
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Short landscape phones ---------- */
+@media (max-height: 480px) and (orientation: landscape) {
+  .header-content .left-header {
+    height: 85vh;
+  }
+}
+
+/* ---------- Touch devices: no hover, so show the project overlay as a bar ---------- */
+@media (hover: none) {
+  .portfolios .portfolio-item .hover-item {
+    inset: auto 0 0 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    border-radius: 0 0 10px 10px;
+    opacity: 1;
+    transform: none;
+    background-color: rgba(22, 138, 173, 0.9);
+  }
+
+  .portfolios .portfolio-item .hover-item h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .portfolios .portfolio-item .hover-item .port-icons .port-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .portfolios .portfolio-item .hover-item .port-icons .port-icon i {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
